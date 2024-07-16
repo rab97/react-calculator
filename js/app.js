@@ -1,4 +1,3 @@
-import { render } from "react-dom";
 import { Button } from "./components/Button";
 import {
   faCheck,
@@ -139,4 +138,4 @@ function App() {
   );
 }
 
-render(<App />, document.getElementById("app"));
+ReactDOM.render(<App />, document.getElementById("app"));
