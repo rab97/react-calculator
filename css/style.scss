@@ -1,0 +1,226 @@
+$black: #000;
+$dark-grey: #6c757d;
+$dark-grey-focus: rgba(108, 117, 125, 0.5);
+$dark-grey-hover: #5a6268;
+$dark-orange: #ff8c00;
+$grey: #333;
+$light-blue: #87ceeb;
+$input-highlight-color: $light-blue;
+$light-blue-focus: rgba(135, 206, 235, 0.5);
+$light-blue-hover: #00bfff;
+$light-grey: #ededed;
+$red: #dc3545;
+$red-focus: rgba(220, 53, 69, 0.5);
+$red-hover: #c82333;
+$shadow: rgba(0, 0, 0, 0.35);
+$slate: #caced1;
+$white: #fff;
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+}
+
+body {
+  background-color: $light-grey;
+  color: $grey;
+  padding: 12px 24px;
+}
+
+.button {
+  align-items: center;
+  background-color: $light-blue;
+  border: none;
+  border-radius: 8px;
+  color: $white;
+  cursor: pointer;
+  display: flex;
+  display: inline-block;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: $light-blue-hover;
+}
+
+.button:focus {
+  box-shadow: 0 0 5px 2px $light-blue-focus;
+  outline: none;
+}
+
+.button-container {
+  display: flex;
+  gap: 8px;
+}
+
+.chip {
+  align-items: center;
+  border: none;
+  border-radius: 8px;
+  border: 1px solid $dark-orange;
+  color: $dark-orange;
+  display: flex;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.container {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+}
+
+.delete-button {
+  background-color: $red;
+}
+
+.delete-button:focus {
+  box-shadow: 0 0 5px 2px $red-focus;
+  outline: none;
+}
+
+.delete-button:hover {
+  background-color: $red-hover;
+}
+
+.disable-button {
+  background-color: $dark-grey;
+}
+
+.disable-button:focus {
+  box-shadow: 0 0 5px 2px $dark-grey-focus;
+  outline: none;
+}
+
+.disable-button:hover {
+  background-color: $dark-grey-hover;
+}
+
+.divider {
+  background-color: $slate;
+}
+
+.icon {
+  margin-right: 4px;
+}
+
+.input {
+  background-color: inherit;
+  border: 1px solid $slate;
+  border-radius: 8px;
+  outline: none;
+  padding: 10px 8px;
+  transition: all 0.3s ease;
+
+  &::selection {
+    background-color: $input-highlight-color;
+    color: $white;
+  }
+}
+
+.input-container {
+  display: flex;
+  gap: 8px;
+}
+
+.input:focus {
+  border: 1px solid $black;
+}
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.list {
+  align-items: flex-start;
+  background-color: $white;
+  border: 1px solid $slate;
+  border-radius: 8px;
+  box-shadow: $shadow 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  list-style: none;
+  list-style-type: none;
+  padding: 0;
+}
+
+.list-item {
+  align-items: center;
+  animation: fadeIn 0.5s ease;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px 8px;
+}
+
+.option {
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 10px 8px;
+}
+
+.select {
+  align-items: center;
+  background-color: inherit;
+  border: 1px solid $slate;
+  border-radius: 8px;
+  cursor: pointer;
+  justify-content: center;
+  outline: none;
+  padding: 8px;
+  user-select: none;
+}
+
+@media (max-width: 768px) {
+  .button,
+  .input,
+  .select {
+    width: 100%;
+  }
+
+  .button-container,
+  .input-container {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .chip {
+    flex-shrink: 0;
+  }
+
+  .list {
+    width: 100%;
+  }
+
+  .list-item {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .row {
+    align-self: center;
+  }
+}
